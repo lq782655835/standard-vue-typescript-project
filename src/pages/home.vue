@@ -7,7 +7,6 @@
                 label="状态"
                 width="200"
                 :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]"
-                :filter-method="filterTag"
                 filter-placement="bottom-end"
             >
                 <template slot-scope="scope">
@@ -29,6 +28,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { getAllTopic } from '@/server'
 
 @Component
 export default class Home extends Vue {
@@ -61,8 +61,16 @@ export default class Home extends Vue {
 
     dialogVisible: boolean = false
 
+    created() {
+        this._gettableList()
+    }
+
+    async _gettableList() {
+        let topics = await getAllTopic()
+        console.log(topics)
+    }
+
     handleClick(row: any) {
-        // console.log('goto next', row)
         this.dialogVisible = true
     }
 
