@@ -3,9 +3,8 @@ import http from './http'
 /**
  * 登录
  */
-export const getAllTopic = (data?: any): Promise<any> =>
+export const getAllTopic = (): Promise<any> =>
     http({
         url: `/topics`,
-        method: 'get',
-        data
+        method: 'get'
     })

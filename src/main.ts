@@ -5,6 +5,7 @@ import store from '@/store'
 import '@/plugins'
 
 Vue.config.productionTip = false
+Vue.prototype.$bus = new Vue()
 
 new Vue({
     router,
