@@ -5,7 +5,7 @@ const directives: any = {
      * 自动下滑到底部指令
      */
     autoscroll: {
-        componentUpdated: function(el) {
+        componentUpdated: function(el: any) {
             let scrollHeight = el.scrollHeight
             let clientHeight = el.clientHeight
 

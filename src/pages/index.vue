@@ -61,8 +61,19 @@ export default class Home extends Vue {
 
     dialogVisible: boolean = false
 
-    created() {
+    created(): void {
         this._gettableList()
+        this.test()
+    }
+
+    test(): void {
+        enum Color {
+            Red,
+            Green,
+            Blue
+        }
+        let c: Color = Color.Green
+        console.log(c) // 1
     }
 
     async _gettableList() {
@@ -70,12 +81,12 @@ export default class Home extends Vue {
         console.log(topics)
     }
 
-    handleClick(row: any) {
+    handleClick(row: any): void {
         this.dialogVisible = true
     }
 
-    goToNext() {
-        this.$router.push('/about')
+    goToNext(): void {
+        // this.$router.push('/about')
     }
 }
 </script>
